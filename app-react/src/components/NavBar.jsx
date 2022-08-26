@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from './form';
+import CardWidget from './CardWidget';
 
 const NavBar = () => {
     return (
@@ -24,7 +25,10 @@ const NavBar = () => {
           <a className="nav-link" href="#">Productos</a>
         </li>
       </ul>
+      
       <Form contBuscar ="Productos"/>
+      <CardWidget/>
+
     </div>
   </div>
 </nav>
