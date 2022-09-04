@@ -1,4 +1,5 @@
 import {React, useState} from 'react'
+import ItemList from './ItemList';
 import './Counter.css';
 
 const Counter = ({stock, agregar}) => {
@@ -23,7 +24,7 @@ const Counter = ({stock, agregar}) => {
     return (
         <div>
             <div className='card bg-secondary mb-3'>
-                <h1>Tus productos</h1>
+                <h1>Producto</h1>
                 <p>En stock: {stock}</p>
                 <p>Cantidad: {count}</p>
            

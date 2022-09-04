@@ -1,20 +1,24 @@
+import React, {useState, useEffect} from 'react';
+import {ItemList} from './ItemList';
+import {Productos} from './Productos';
 import './ItemListContainer.css';
-import React from 'react';
-import Counter from './Counter';
-import Item from './Item';
 
-const ItemListContainer = () => {
-    function agregar(count) {
-        console.log(`Usted tiene ${count} productos`)
-    }
 
-    return (
-   <div>
-    <h1>Bienvenid@</h1>
-    <Counter stock={12} agregar={agregar}/>
-    <Item/>
-   </div>
-    )
+export const ItemListContainer = () => {
+    const [ProductosList, setProductosList] = useState([])
+  
+const getProductos = () => new Promise((resolve, reject) => {
+           setTimeout(()=> resolve(Productos), 2000)
+    })       
+
+useEffect(() => {
+    getProductos()
+.then(Productos => setProductosList(Productos))
+    .catch(error => console.error(error))
+}, []) 
+
+return (
+    <ItemList ProductosList={ProductosList}/>
+)
 }
 
-export default ItemListContainer
