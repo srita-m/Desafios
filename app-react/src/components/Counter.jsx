@@ -1,5 +1,4 @@
 import {React, useState} from 'react'
-import ItemList from './ItemList';
 import './Counter.css';
 
 const Counter = ({stock, agregar}) => {
@@ -12,7 +11,7 @@ const Counter = ({stock, agregar}) => {
     }
 
         function restar() {
-            if (count > 1){
+            if (count > 0){
             setCount(count - 1)
             }
         }
@@ -23,12 +22,6 @@ const Counter = ({stock, agregar}) => {
 
     return (
         <div>
-            <div className='card bg-secondary mb-3'>
-                <h1>Producto</h1>
-                <p>En stock: {stock}</p>
-                <p>Cantidad: {count}</p>
-           
-
             <div>
                 <button className='btn btn-outline-success' onClick={sumar}> + </button>
                 <button className='btn btn-outline-success' onClick={vaciar}> Vaciar </button>
@@ -36,7 +29,6 @@ const Counter = ({stock, agregar}) => {
             </div>
             <div>
                 <button className='btn btn-outline-info' onClick={() => agregar(count)}>Comprar</button>
-            </div>
             </div>
             
         </div>

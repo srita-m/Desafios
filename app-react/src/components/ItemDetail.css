@@ -1,0 +1,32 @@
+.card-detail {
+    display: flex;
+    width: 100%;
+}
+
+.card-detail-left {
+    width: 30%;
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-detail-right {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color:lightgoldenrodyellow;
+    margin: 50px;
+}
+
+.img{
+    max-width: 300px;
+    min-width: 150px;
+}
+
+.imgMax{
+    max-width: 500px;
+    min-width: 300px;
+}
