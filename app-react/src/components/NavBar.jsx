@@ -1,6 +1,8 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 import Form from './form';
 import CardWidget from './CardWidget';
+
 
 const NavBar = () => {
     return (
@@ -13,17 +15,21 @@ const NavBar = () => {
     </button>
     <div className="collapse navbar-collapse" id="navbarColor02">
       <ul className="navbar-nav me-auto">
+      <Link to='/'>
         <li className="nav-item">
-          <a className="nav-link active" href="#">Inicio
-            <span className="visually-hidden">(current)</span>
-          </a>
+        Home
         </li>
+        </Link>
+        <Link to='/nosotros'>
         <li className="nav-item">
-          <a className="nav-link" href="#">Nosotros</a>
+       Nosotros
         </li>
+        </Link>
+        <Link to='/catalogo'>
         <li className="nav-item">
-          <a className="nav-link" href="#">Productos</a>
+       Catalogo
         </li>
+        </Link>
       </ul>
       
       <Form contBuscar ="Productos"/>

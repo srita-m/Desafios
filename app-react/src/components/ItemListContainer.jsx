@@ -4,7 +4,7 @@ import {Productos} from './Productos';
 import './ItemListContainer.css';
 
 
-export const ItemListContainer = () => {
+const ItemListContainer = () => {
     const [ProductosList, setProductosList] = useState([])
   
 const getProductos = () => new Promise((resolve, reject) => {
@@ -22,3 +22,4 @@ return (
 )
 }
 
+export default ItemListContainer

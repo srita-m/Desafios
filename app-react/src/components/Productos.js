@@ -5,7 +5,8 @@ export const Productos = [
     precio: 450, 
     stock: 10, 
     id: 1, 
-    img:"/img/principito.png" 
+    img:"/img/principito.png", 
+    categoria: 'Bebidas calientes'
     },
     {
     Title: 'Botella 500ml',
@@ -13,7 +14,8 @@ export const Productos = [
     precio: 450, 
     stock: 8, 
     id: 2, 
-    img:"/img/tortuga.png" 
+    img:"/img/tortuga.png",
+    categoria: 'Bebidas frias'
     },
     {
     Title: 'Lata 355ml',
@@ -21,7 +23,8 @@ export const Productos = [
     precio: 250, 
     stock:3, 
     id: 3, 
-    img:"/img/ave.png" 
+    img:"/img/ave.png", 
+    categoria: 'Bebidas frias'
     },
     {
     Title:'Taza 11oz',
@@ -29,7 +32,8 @@ export const Productos = [
     precio: 150, 
     stock:2, 
     id:4,  
-    img:"/img/mariposa.png" 
+    img:"/img/mariposa.png",
+    categoria: 'Bebidas calientes'
     },
     {
     Title:'Taza 15oz',
@@ -37,7 +41,8 @@ export const Productos = [
     precio: 200, 
     stock:13, 
     id:5, 
-    img:"/img/bicicleta.png" 
+    img:"/img/bicicleta.png",
+    categoria: 'Bebidas calientes'
     },
     {
     Title:'Botella 750ml',
@@ -45,7 +50,8 @@ export const Productos = [
     precio: 450, 
     stock:6, 
     id:6, 
-    img:"/img/gato.png" 
+    img:"/img/gato.png",
+    categoria: 'Bebidas frias'
     },
     {
     Title:'Cojin',
@@ -53,6 +59,7 @@ export const Productos = [
     precio: 200, 
     stock:4, 
     id:7,  
-    img:"/img/cojin.png" 
+    img:"/img/cojin.png", 
+    categoria: 'Casa'
 },
 ]

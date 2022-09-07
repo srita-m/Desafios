@@ -14,9 +14,10 @@ export const ItemDetail = ({item}) => {
             </div>
             <div className="card-detail-right">
             <h1>{item.Title}</h1>
-                <p>{item.description}</p>
+                <p>{item.descripcion}</p>
                 <p className="price">${item.precio}</p>
                 <p>Stock: {item.stock}</p>
+                <p>Categoria: {item.categoria}</p>
                 <Counter stock={item.stock} initial={0} />
             </div>
         </div>
