@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {Productos} from './Productos'
+import Loading from './Loading'
 import { ItemDetail } from './ItemDetail'
 import {useParams} from 'react-router-dom'
 
@@ -24,7 +25,7 @@ const ItemDetailContainer = () => {
     return (
       <>
         {
-          item ? <ItemDetail item={item}/> : <h1>Procesando...</h1>
+          item ? <ItemDetail item={item}/> : <Loading/>
         }
       </>
   )
