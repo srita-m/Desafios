@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
+
 export const ItemCard = ({Item}) => {
     const { Title, precio, stock, img, id, categoria} = Item
     return (

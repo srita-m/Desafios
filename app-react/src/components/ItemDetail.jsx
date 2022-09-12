@@ -18,7 +18,7 @@ export const ItemDetail = ({item}) => {
                 <p className="price">${item.precio}</p>
                 <p>Stock: {item.stock}</p>
                 <p>Categoria: {item.categoria}</p>
-                <Counter stock={item.stock} initial={0} />
+             <Counter/>
             </div>
         </div>
     </div>

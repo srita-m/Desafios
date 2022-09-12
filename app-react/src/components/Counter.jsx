@@ -1,38 +1,39 @@
 import {React, useState} from 'react'
 import './Counter.css';
 
-const Counter = ({stock, agregar}) => {
+const Counter = ({item}) => {
     const [count, setCount] = useState(0);
 
-        function sumar() {
-            if (count < stock){
-            setCount(count + 1)
-        }
-    }
+        const agregarCarrito = (item, count) => {
+            const ItemCarrito = {id:item.id, cantidad:count}
+            console.log(ItemCarrito)
+            }
 
-        function restar() {
-            if (count > 0){
-            setCount(count - 1)
+        const countItem = (operacion) => {
+        if (operacion == "+") {
+            if (count < item.stock) {
+                setCount(count + 1)
+            } else {
+                if (count > 1) {
+                    setCount(count - 1) 
             }
         }
-
-        function vaciar(){
-            setCount(0)
-        }
+    }
 
     return (
         <div>
             <div>
-                <button className='btn btn-outline-success' onClick={sumar}> + </button>
-                <button className='btn btn-outline-success' onClick={vaciar}> Vaciar </button>
-                <button className='btn btn-outline-success' onClick={restar}> - </button>
+                <button className='btn btn-outline-success' onClick={() => countItem("+")}> + </button>
+                <button className='btn btn-outline-success' onClick={() => countItem("-")}> - </button>
+                <p>Cantidad:{count}</p>
             </div>
             <div>
-                <button className='btn btn-outline-info' onClick={() => agregar(count)}>Comprar</button>
+                <input type="number" placeholder='cantidad' onChange={setCount()}/>
+                <button className='btn btn-outline-info' onClick={() => agregarCarrito(item, count)}>Comprar</button>
             </div>
             
         </div>
     )
 }
-
+}
 export default Counter;
