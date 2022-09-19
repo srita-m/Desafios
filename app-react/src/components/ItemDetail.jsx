@@ -1,26 +1,30 @@
 import {React, useState, useContext} from 'react'
-import {Link} from 'react-router-dom';
-import { CartContexto } from '../contexto/CartContexto';
 import './Counter.css';
+import './ItemDetail.css';
+import { CartContexto } from '../contexto/CartContexto';
+
 
 const ItemDetail = ({item}) => {
-  const [cant, setCant] = useState(1);
-  const {carrito, agregarProductoCarrito} =  useContext(CartContexto);
-  const carritoCant= (operacion) => {
-  if (operacion == "+") {
-      if (cant < item.stock) {
-          setCant(cant + 1)
-      } else {
-          if (cant > 1) {
-              setCant(cant - 1) 
+  const [cantidad, setCantidad]= useState(1);
+  const {carrito, agregarProductoCarrito} =  (CartContexto);
+
+
+ 
+  const AgregarCarrito = (item, cantidad) => {
+  const ItemCarrito = {id:item.id, cantidad:cantidad}
+  agregarProductoCarrito(ItemCarrito)
+  console.log (carrito)
+}
+const cantidadItem = (operacion) => {
+  if(operacion == "+") {
+      if(cantidad < item.stock) {
+          setCantidad(cantidad + 1)
+      }
+  } else {
+      if(cantidad > 1) {
+          setCantidad(cantidad - 1)
       }
   }
-}
-
-const AgregarCarrito = (item, cant) => {
-  const ItemCarrito = {id:item.id, cantidad:cant}
-  agregarProductoCarrito(ItemCarrito)
-  console.log(carrito)
 }
 
   return (
@@ -35,14 +39,13 @@ const AgregarCarrito = (item, cant) => {
                 <p className="price">${item.precio}</p>
                 <p>Stock: {item.stock}</p>
                 <p>Categoria: {item.categoria}</p>
-                <button className='btn btn-outline-success' onClick={() =>carritoCant("+")}> + </button>
-                <button className='btn btn-outline-success' onClick={() =>carritoCant("-")}> - </button>
-                <p>Cantidad:{cant}</p>
-            <input type="number" placeholder='cantidad' onChange={setCant()}/>
-            <Link to='/cart'>
-                <button className='btn btn-outline-info' onClick={() => AgregarCarrito(item, cant)} >Comprar</button>
-            </Link>
-               
+                <p> Cantidad:{cantidad}</p>
+                <p>
+                <button className='btn btn-outline-success'onClick={() => cantidadItem("+")}> + </button>
+                <button className='btn btn-outline-success'onClick={() => cantidadItem("-")}> - </button>
+                </p>
+                <button className='btn btn-outline-info' onClick={() => AgregarCarrito(item, cantidad)} >Comprar</button>
+           
             <div>
             
             </div>
@@ -53,7 +56,6 @@ const AgregarCarrito = (item, cant) => {
   
     </div>
   )
-}
 }
 
 export default ItemDetail
