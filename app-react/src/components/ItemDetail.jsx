@@ -1,6 +1,7 @@
 import {React, useState, useContext} from 'react'
 import './Counter.css';
 import './ItemDetail.css';
+import {Link} from 'react-router-dom'
 import { CartContexto } from '../contexto/CartContexto';
 
 
@@ -44,8 +45,9 @@ const cantidadItem = (operacion) => {
                 <button className='btn btn-outline-success'onClick={() => cantidadItem("+")}> + </button>
                 <button className='btn btn-outline-success'onClick={() => cantidadItem("-")}> - </button>
                 </p>
+                <Link to='/cart'> 
                 <button className='btn btn-outline-info' onClick={() => AgregarCarrito(item, cantidad)} >Comprar</button>
-           
+                </Link>
             <div>
             
             </div>
